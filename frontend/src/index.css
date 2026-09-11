@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-obsidian: #ffffff;
+    --bg-panel: rgba(255, 255, 255, 0.85);
+    --bg-card: rgba(255, 255, 255, 0.92);
+    --border-dim: rgba(226, 232, 240, 0.85);
+    --border-glow: rgba(139, 92, 246, 0.35);
+  }
+
+  body {
+    background-color: #f8f7fc;
+    color: #0f172a;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    background-image: 
+      radial-gradient(ellipse at 25% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 10%, rgba(217, 70, 239, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(14, 165, 233, 0.05) 0%, transparent 60%),
+      linear-gradient(180deg, #fbfaff 0%, #f6f5fb 50%, #f1eff9 100%);
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f0f7;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+/* Ambient luminous glow and pearl atmosphere */
+.ambient-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-glow::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: 15%;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(217, 70, 239, 0.04) 50%, transparent 70%);
+  filter: blur(90px);
+  animation: float 14s ease-in-out infinite alternate;
+}
+
+.ambient-glow::after {
+  content: '';
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.05) 0%, rgba(139, 92, 246, 0.04) 50%, transparent 70%);
+  filter: blur(100px);
+  animation: float 18s ease-in-out infinite alternate-reverse;
+}
+
+/* React Flow custom light styling */
+.react-flow__pane {
+  background: transparent !important;
+}
+.react-flow__handle {
+  background: #7c3aed !important;
+  width: 8px !important;
+  height: 8px !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.5) !important;
+}
+.react-flow__edge-path {
+  stroke: rgba(124, 58, 237, 0.4) !important;
+  stroke-width: 2 !important;
+}
+.react-flow__controls {
+  box-shadow: 0 4px 20px rgba(112, 80, 210, 0.08) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(16px) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+.react-flow__controls-button {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  fill: #64748b !important;
+}
+.react-flow__controls-button:hover {
+  background: #f1eff9 !important;
+  fill: #6d28d9 !important;
+}
+
+/* Frosted light neo-glass utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 10px 30px -4px rgba(112, 80, 210, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(139, 92, 246, 0.25);
+}
+
+/* Font helpers */
+.font-mono-code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
